@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="SecureForce Pricing — Transparent security guard deployment plans for residential, corporate, and enterprise clients. No hidden costs.">
+  <title>Pricing | SecureForce Security Agency</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath d='M50 5 L88 22 L88 55 C88 74 71 88 50 96 C29 88 12 74 12 55 L12 22 Z' fill='%231A2B4A' stroke='%23C8973A' stroke-width='3'/%3E%3Cpath d='M36 52 L46 62 L67 38' stroke='%23C8973A' stroke-width='6' stroke-linecap='round' stroke-linejoin='round' fill='none'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div id="navbar-placeholder"></div>
+<div class="page-offset"></div>
+
+<!-- Page Hero -->
+<section class="page-hero" style="height:320px;">
+  <div style="position:absolute;inset:0;background:linear-gradient(135deg,var(--primary-dark) 0%,var(--primary-light) 100%);"></div>
+  <div style="position:absolute;inset:0;background-image:linear-gradient(rgba(200,151,58,0.04) 1px,transparent 1px),linear-gradient(90deg,rgba(200,151,58,0.04) 1px,transparent 1px);background-size:48px 48px;"></div>
+  <div style="position:absolute;right:5%;top:50%;transform:translateY(-50%);opacity:0.06;">
+    <svg width="280" height="340" viewBox="0 0 100 120" fill="white">
+      <path d="M50 5 L88 22 L88 68 C88 92 71 108 50 118 C29 108 12 92 12 68 L12 22 Z"/>
+    </svg>
+  </div>
+  <div class="container">
+    <div class="page-hero-content animate-on-scroll">
+      <div class="breadcrumb">
+        <a href="index.html">Home</a><span>›</span><span>Pricing</span>
+      </div>
+      <h1>Transparent <span style="color:var(--secondary);">Pricing Plans</span></h1>
+      <p>Flexible contracts for every scale — from single-site deployments to pan-India enterprise manpower solutions.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Toggle Billing -->
+<section class="section" id="pricing-section">
+  <div class="container">
+    <div class="section-header animate-on-scroll">
+      <div class="section-label"><i class="fas fa-tags"></i> Our Plans</div>
+      <h2>Choose Your <span class="text-gold">Security Plan</span></h2>
+      <p>All plans include PSARA-licensed guards, ESI/PF compliance, and 24/7 control room support. Scale up anytime.</p>
+      <!-- Billing toggle -->
+      <div style="display:flex;align-items:center;justify-content:center;gap:14px;margin-top:28px;">
+        <span style="font-size:0.9rem;font-weight:600;color:var(--text-body);" id="label-monthly">Monthly</span>
+        <label style="position:relative;display:inline-block;width:52px;height:28px;cursor:pointer;">
+          <input type="checkbox" id="billing-toggle" style="opacity:0;width:0;height:0;" onchange="toggleBilling(this.checked)">
+          <span style="position:absolute;inset:0;background:var(--primary);border-radius:28px;transition:0.3s;"></span>
+          <span id="billing-knob" style="position:absolute;left:4px;top:4px;width:20px;height:20px;background:#fff;border-radius:50%;transition:0.3s;"></span>
+        </label>
+        <span style="font-size:0.9rem;font-weight:600;color:var(--text-body);" id="label-annual">Annual
+          <span style="background:rgba(34,197,94,0.12);color:var(--success);font-size:0.72rem;font-weight:700;padding:2px 8px;border-radius:var(--radius-pill);margin-left:6px;border:1px solid rgba(34,197,94,0.25);">Save 15%</span>
+        </span>
+      </div>
+    </div>
+
+    <!-- Pricing Cards -->
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:24px;align-items:center;max-width:980px;margin:0 auto;">
+
+      <!-- Basic -->
+      <div class="pricing-card animate-on-scroll delay-1" id="plan-basic">
+        <div class="pricing-plan">Basic</div>
+        <div class="pricing-price">
+          <sup>₹</sup><span class="price-val" data-monthly="18,000" data-annual="15,300">18,000</span>
+        </div>
+        <div class="pricing-period">per guard / per month</div>
+        <div class="pricing-features">
+          <div class="pricing-feature"><i class="fas fa-check"></i> 1 Uniformed Security Guard</div>
+          <div class="pricing-feature"><i class="fas fa-check"></i> 12-hour duty shift</div>
+          <div class="pricing-feature"><i class="fas fa-check"></i> Police verified personnel</div>
+          <div class="pricing-feature"><i class="fas fa-check"></i> ESI & PF compliant</div>
+          <div class="pricing-feature"><i class="fas fa-check"></i> Monthly attendance report</div>
+          <div class="pricing-feature na"><i class="fas fa-times"></i> Supervisor visits</div>
+          <div class="pricing-feature na"><i class="fas fa-times"></i> Control room support</div>
+          <div class="pricing-feature na"><i class="fas fa-times"></i> Guard replacement < 4 hrs</div>
+        </div>
+        <a href="contact.html#enquiry" class="btn btn-secondary btn-full" id="plan-basic-btn">Get Started</a>
+      </div>
+
+      <!-- Professional (Popular) -->
+      <div class="pricing-card popular animate-on-scroll delay-2" id="plan-professional">
+        <div class="popular-badge"><i class="fas fa-star" style="font-size:0.6rem;"></i> Most Popular</div>
+        <div class="pricing-plan" style="color:var(--primary);">Professional</div>
+        <div class="pricing-price" style="color:var(--primary);">
+          <sup>₹</sup><span class="price-val" data-monthly="26,000" data-annual="22,100">26,000</span>
+        </div>
+        <div class="pricing-period">per guard / per month</div>
+        <div class="pricing-features">
+          <div class="pricing-feature"><i class="fas fa-check"></i> 1 Trained Security Guard</div>
+          <div class="pricing-feature"><i class="fas fa-check"></i> 24-hour duty coverage</div>
+          <div class="pricing-feature"><i class="fas fa-check"></i> Police verified + armed option</div>
+          <div class="pricing-feature"><i class="fas fa-check"></i> ESI & PF compliant</div>
+          <div class="pricing-feature"><i class="fas fa-check"></i> Weekly performance report</div>
+          <div class="pricing-feature"><i class="fas fa-check"></i> Monthly supervisor visits</div>
+          <div class="pricing-feature"><i class="fas fa-check"></i> 24/7 control room support</div>
+          <div class="pricing-feature na"><i class="fas fa-times"></i> Guard replacement < 4 hrs</div>
+        </div>
+        <a href="contact.html#enquiry" class="btn btn-primary btn-full btn-shine" id="plan-professional-btn">Get Started</a>
+      </div>
+
+      <!-- Enterprise -->
+      <div class="pricing-card animate-on-scroll delay-3" id="plan-enterprise">
+        <div class="pricing-plan">Enterprise</div>
+        <div class="pricing-price">
+          <sup>₹</sup><span class="price-val" data-monthly="38,000" data-annual="32,300">38,000</span>
+        </div>
+        <div class="pricing-period">per guard / per month</div>
+        <div class="pricing-features">
+          <div class="pricing-feature"><i class="fas fa-check"></i> Elite Security Personnel</div>
+          <div class="pricing-feature"><i class="fas fa-check"></i> 24-hour coverage + relief guard</div>
+          <div class="pricing-feature"><i class="fas fa-check"></i> Police verified + armed option</div>
+          <div class="pricing-feature"><i class="fas fa-check"></i> ESI, PF & bonus compliant</div>
+          <div class="pricing-feature"><i class="fas fa-check"></i> Daily digital reports</div>
+          <div class="pricing-feature"><i class="fas fa-check"></i> Weekly supervisor visits</div>
+          <div class="pricing-feature"><i class="fas fa-check"></i> 24/7 priority control room</div>
+          <div class="pricing-feature"><i class="fas fa-check"></i> Guard replacement < 4 hrs</div>
+        </div>
+        <a href="contact.html#enquiry" class="btn btn-outline-gold btn-full" id="plan-enterprise-btn">Contact Sales</a>
+      </div>
+
+    </div>
+
+    <!-- Note -->
+    <div style="text-align:center;margin-top:32px;" class="animate-on-scroll">
+      <p style="font-size:0.85rem;color:var(--text-muted);">
+        <i class="fas fa-info-circle" style="color:var(--secondary);"></i>
+        All prices are indicative. Final pricing depends on site location, shift pattern, and number of guards. 
+        <a href="contact.html#enquiry" style="color:var(--primary);font-weight:600;">Request a custom quote →</a>
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- What's Included -->
+<section class="section section-alt" id="whats-included">
+  <div class="container">
+    <div class="section-header animate-on-scroll">
+      <div class="section-label"><i class="fas fa-check-circle"></i> Always Included</div>
+      <h2>Every Plan Comes <span class="text-gold">Standard With</span></h2>
+    </div>
+    <div class="grid-4">
+      <div class="card text-center animate-on-scroll delay-1">
+        <div class="card-body">
+          <div class="card-icon" style="margin:0 auto 16px;"><i class="fas fa-certificate"></i></div>
+          <h4 style="margin-bottom:8px;">PSARA Compliance</h4>
+          <p style="font-size:0.85rem;">All guards hold valid PSARA certifications under the Private Security Agencies Regulation Act, 2005.</p>
+        </div>
+      </div>
+      <div class="card text-center animate-on-scroll delay-2">
+        <div class="card-body">
+          <div class="card-icon" style="margin:0 auto 16px;"><i class="fas fa-user-check"></i></div>
+          <h4 style="margin-bottom:8px;">Police Verification</h4>
+          <p style="font-size:0.85rem;">Every guard is police-verified and character-certified before deployment — no exceptions.</p>
+        </div>
+      </div>
+      <div class="card text-center animate-on-scroll delay-3">
+        <div class="card-body">
+          <div class="card-icon" style="margin:0 auto 16px;"><i class="fas fa-file-contract"></i></div>
+          <h4 style="margin-bottom:8px;">Statutory Compliance</h4>
+          <p style="font-size:0.85rem;">Full ESI, PF, and bonus compliance for every guard. Zero legal risk to your organization.</p>
+        </div>
+      </div>
+      <div class="card text-center animate-on-scroll delay-4">
+        <div class="card-body">
+          <div class="card-icon" style="margin:0 auto 16px;"><i class="fas fa-tshirt"></i></div>
+          <h4 style="margin-bottom:8px;">Full Uniform & Equipment</h4>
+          <p style="font-size:0.85rem;">Guards deployed with full uniform, ID card, whistle, baton, and torch — all supplied by SecureForce.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ Pricing -->
+<section class="section" id="pricing-faq">
+  <div class="container" style="max-width:760px;">
+    <div class="section-header animate-on-scroll">
+      <div class="section-label"><i class="fas fa-question-circle"></i> Pricing FAQ</div>
+      <h2>Your Questions <span class="text-gold">Answered</span></h2>
+    </div>
+    <div class="animate-on-scroll delay-1">
+      <div class="faq-item" id="pfaq-1">
+        <button class="faq-question" aria-expanded="false">Are there any setup or onboarding fees?<div class="faq-icon"><i class="fas fa-plus"></i></div></button>
+        <div class="faq-answer"><div class="faq-answer-inner">No. There are zero setup or onboarding fees. The quoted monthly rate is all-inclusive — covering the guard's salary, uniform, statutory deductions, and our management overhead.</div></div>
+      </div>
+      <div class="faq-item" id="pfaq-2">
+        <button class="faq-question" aria-expanded="false">Can I get a discount for multiple guards?<div class="faq-icon"><i class="fas fa-plus"></i></div></button>
+        <div class="faq-answer"><div class="faq-answer-inner">Yes, volume discounts apply for 10+ guards at a single site, and tiered discounts for 50+ guards across multiple sites. Contact our enterprise sales team for customized bulk pricing.</div></div>
+      </div>
+      <div class="faq-item" id="pfaq-3">
+        <button class="faq-question" aria-expanded="false">What is your billing cycle and payment mode?<div class="faq-icon"><i class="fas fa-plus"></i></div></button>
+        <div class="faq-answer"><div class="faq-answer-inner">Billing is done on the 1st of each month with a net-15 payment term. We accept NEFT, RTGS, UPI, and cheque. A one-month security deposit is collected at the time of contract signing.</div></div>
+      </div>
+      <div class="faq-item" id="pfaq-4">
+        <button class="faq-question" aria-expanded="false">Can I switch plans after signing?<div class="faq-icon"><i class="fas fa-plus"></i></div></button>
+        <div class="faq-answer"><div class="faq-answer-inner">Yes, you can upgrade your plan at any time with 7 days' notice. Downgrading is allowed at the end of a billing cycle. We offer complete flexibility to match your evolving security requirements.</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="section section-dark" id="pricing-cta">
+  <div class="container">
+    <div style="text-align:center;max-width:580px;margin:0 auto;" class="animate-on-scroll">
+      <h2 style="color:#fff;margin-bottom:16px;">Not Sure Which Plan? <span style="color:var(--secondary);">Talk to Us.</span></h2>
+      <p style="color:rgba(255,255,255,0.65);margin-bottom:32px;">Our security consultants will analyze your site and recommend the optimal staffing plan — free of charge, no commitment.</p>
+      <a href="contact.html#enquiry" class="btn btn-gold btn-lg btn-shine" id="pricing-cta-btn"><i class="fas fa-paper-plane"></i> Get Free Consultation</a>
+    </div>
+  </div>
+</section>
+
+<div id="footer-placeholder"></div>
+<script src="components.js"></script>
+<script src="script.js"></script>
+<script>
+function toggleBilling(isAnnual) {
+  document.querySelectorAll('.price-val').forEach(el => {
+    el.textContent = isAnnual ? el.dataset.annual : el.dataset.monthly;
+  });
+  const knob = document.getElementById('billing-knob');
+  if (knob) knob.style.left = isAnnual ? '28px' : '4px';
+}
+</script>
+</body>
+</html>

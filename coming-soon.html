@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Something big is coming to SecureForce — New digital security management features, guard tracking, and client portal launching soon.">
+  <title>Coming Soon | SecureForce Security Agency</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath d='M50 5 L88 22 L88 55 C88 74 71 88 50 96 C29 88 12 74 12 55 L12 22 Z' fill='%231A2B4A' stroke='%23C8973A' stroke-width='3'/%3E%3Cpath d='M36 52 L46 62 L67 38' stroke='%23C8973A' stroke-width='6' stroke-linecap='round' stroke-linejoin='round' fill='none'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    @keyframes shimmerText { 0%{background-position:-200% center;}100%{background-position:200% center;} }
+    @keyframes orbitPulse { 0%,100%{transform:scale(1);opacity:1;}50%{transform:scale(1.06);opacity:0.75;} }
+    @keyframes float { 0%,100%{transform:translateY(0);}50%{transform:translateY(-16px);} }
+    @keyframes pulse { 0%,100%{opacity:1;transform:scale(1);}50%{opacity:0.5;transform:scale(0.85);} }
+
+    .cd-box { display:flex;flex-direction:column;align-items:center;width:90px; }
+    .cd-num {
+      width:90px;height:90px;border-radius:16px;
+      display:flex;align-items:center;justify-content:center;
+      font-family:'Barlow Condensed',sans-serif;font-size:2.2rem;font-weight:800;color:#fff;
+      background:rgba(26,43,74,0.4);border:1px solid rgba(200,151,58,0.3);
+      position:relative;overflow:hidden;
+    }
+    .cd-num::before {
+      content:'';position:absolute;top:0;left:0;right:0;height:1px;
+      background:linear-gradient(90deg,transparent,rgba(200,151,58,0.7),transparent);
+    }
+    .cd-label { font-size:0.7rem;color:rgba(255,255,255,0.45);text-transform:uppercase;letter-spacing:0.12em;margin-top:9px;font-weight:600; }
+    .cd-sep { font-size:2rem;color:rgba(200,151,58,0.5);font-weight:300;align-self:center;margin-bottom:22px; }
+
+    @media (max-width:480px) {
+      .cd-box { width:64px; }
+      .cd-num { width:64px;height:64px;font-size:1.5rem;border-radius:10px; }
+    }
+  </style>
+</head>
+<body>
+
+<div style="min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;position:relative;overflow:hidden;background:linear-gradient(145deg,#06090F 0%,#0D1B32 40%,#111E36 75%,#06090F 100%);padding:40px 16px;">
+
+  <!-- Top controls -->
+  <div style="position:fixed;top:20px;right:20px;display:flex;gap:8px;z-index:100;">
+    <button class="icon-btn dark-toggle" title="Toggle Dark Mode" aria-label="Toggle dark mode"><i class="fas fa-moon"></i></button>
+    <button class="icon-btn rtl-toggle" title="Toggle RTL" aria-label="Toggle RTL"><i class="fas fa-exchange-alt"></i></button>
+  </div>
+
+  <!-- Background decorations -->
+  <div style="position:absolute;inset:0;pointer-events:none;overflow:hidden;">
+    <div style="position:absolute;width:900px;height:900px;border-radius:50%;background:radial-gradient(circle,rgba(26,43,74,0.25) 0%,transparent 70%);top:-350px;right:-350px;animation:orbitPulse 10s ease-in-out infinite;"></div>
+    <div style="position:absolute;width:700px;height:700px;border-radius:50%;background:radial-gradient(circle,rgba(200,151,58,0.08) 0%,transparent 70%);bottom:-300px;left:-300px;animation:orbitPulse 13s ease-in-out infinite 3s;"></div>
+    <div style="position:absolute;inset:0;background-image:linear-gradient(rgba(26,43,74,0.08) 1px,transparent 1px),linear-gradient(90deg,rgba(26,43,74,0.08) 1px,transparent 1px);background-size:60px 60px;"></div>
+    <!-- Floating icons -->
+    <div style="position:absolute;top:8%;left:4%;opacity:0.09;animation:float 8s ease-in-out infinite;"><i class="fas fa-shield-alt" style="font-size:4rem;color:#fff;"></i></div>
+    <div style="position:absolute;bottom:12%;right:5%;opacity:0.08;animation:float 10s ease-in-out infinite 2s;"><i class="fas fa-broadcast-tower" style="font-size:4.5rem;color:var(--secondary);"></i></div>
+    <div style="position:absolute;top:45%;left:2%;opacity:0.06;animation:float 6s ease-in-out infinite 1s;"><i class="fas fa-server" style="font-size:2.8rem;color:#fff;"></i></div>
+    <div style="position:absolute;top:22%;right:3%;opacity:0.07;animation:float 9s ease-in-out infinite 4s;"><i class="fas fa-fingerprint" style="font-size:3.5rem;color:var(--secondary);"></i></div>
+  </div>
+
+  <!-- Content -->
+  <div style="position:relative;z-index:1;text-align:center;max-width:700px;width:100%;" id="cs-content">
+
+    <!-- Logo -->
+    <div style="margin-bottom:44px;">
+      <a href="index.html" style="display:inline-flex;align-items:center;gap:12px;text-decoration:none;" id="cs-logo" aria-label="SecureForce - Return Home">
+        <svg width="40" height="40" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <defs><linearGradient id="csGrad" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#C8973A"/><stop offset="100%" stop-color="#DDB358"/></linearGradient></defs>
+          <path d="M50 8 L86 24 L86 52 C86 70 70 84 50 92 C30 84 14 70 14 52 L14 24 Z" fill="url(#csGrad)" fill-opacity="0.15" stroke="url(#csGrad)" stroke-width="3" stroke-linejoin="round"/>
+          <path d="M38 50 L46 58 L64 40" stroke="url(#csGrad)" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <span style="font-family:'Barlow Condensed',sans-serif;font-size:1.8rem;font-weight:800;color:#fff;letter-spacing:0.02em;">Secure<span style="color:var(--secondary);">Force</span></span>
+      </a>
+    </div>
+
+    <!-- Status badge -->
+    <div style="display:inline-flex;align-items:center;gap:9px;background:rgba(26,43,74,0.4);border:1px solid rgba(200,151,58,0.3);border-radius:50px;padding:7px 20px;margin-bottom:28px;">
+      <span style="width:7px;height:7px;border-radius:50%;background:var(--secondary);animation:pulse 2s infinite;display:inline-block;"></span>
+      <span style="font-size:0.72rem;color:rgba(255,255,255,0.65);font-weight:700;letter-spacing:0.15em;text-transform:uppercase;">Platform Launching Soon</span>
+      <span style="width:7px;height:7px;border-radius:50%;background:#22C55E;animation:pulse 2s infinite 1s;display:inline-block;"></span>
+    </div>
+
+    <!-- Headline -->
+    <h1 style="font-family:'Barlow Condensed',sans-serif;font-size:clamp(2.8rem,7vw,5rem);line-height:1.05;margin-bottom:20px;color:#fff;font-weight:900;">
+      Your Security<br>
+      <span style="background:linear-gradient(135deg,#1A2B4A 0%,#3A5A8A 25%,#C8973A 55%,#DDB358 75%,#1A2B4A 100%);background-size:200% auto;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;animation:shimmerText 5s linear infinite;">Dashboard</span><br>
+      Is Coming
+    </h1>
+
+    <p style="color:rgba(255,255,255,0.55);font-size:1.05rem;max-width:520px;margin:0 auto 40px;line-height:1.85;">
+      We're building a state-of-the-art client portal — real-time guard tracking, deployment management, attendance reports, and direct communications with your security team. All in one place.
+    </p>
+
+    <!-- Countdown -->
+    <div style="display:flex;justify-content:center;align-items:center;gap:8px;margin-bottom:44px;flex-wrap:nowrap;" id="countdown-container">
+      <div class="cd-box"><div class="cd-num" id="cd-days">30</div><div class="cd-label">Days</div></div>
+      <div class="cd-sep">:</div>
+      <div class="cd-box"><div class="cd-num" id="cd-hours">00</div><div class="cd-label">Hours</div></div>
+      <div class="cd-sep">:</div>
+      <div class="cd-box"><div class="cd-num" id="cd-mins">00</div><div class="cd-label">Minutes</div></div>
+      <div class="cd-sep">:</div>
+      <div class="cd-box"><div class="cd-num" id="cd-secs">00</div><div class="cd-label">Seconds</div></div>
+    </div>
+
+    <!-- Features preview -->
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:14px;max-width:560px;margin:0 auto 40px;">
+      <div style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:var(--radius-md);padding:18px 14px;text-align:center;">
+        <i class="fas fa-map-marker-alt" style="font-size:1.4rem;color:var(--secondary);margin-bottom:8px;display:block;"></i>
+        <div style="font-size:0.78rem;color:rgba(255,255,255,0.6);font-weight:600;">Guard Tracking</div>
+      </div>
+      <div style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:var(--radius-md);padding:18px 14px;text-align:center;">
+        <i class="fas fa-chart-bar" style="font-size:1.4rem;color:var(--secondary);margin-bottom:8px;display:block;"></i>
+        <div style="font-size:0.78rem;color:rgba(255,255,255,0.6);font-weight:600;">Live Reports</div>
+      </div>
+      <div style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:var(--radius-md);padding:18px 14px;text-align:center;">
+        <i class="fas fa-comments" style="font-size:1.4rem;color:var(--secondary);margin-bottom:8px;display:block;"></i>
+        <div style="font-size:0.78rem;color:rgba(255,255,255,0.6);font-weight:600;">Direct Comms</div>
+      </div>
+    </div>
+
+    <!-- Email form -->
+    <div style="max-width:480px;margin:0 auto 36px;" id="cs-form-wrapper">
+      <form id="cs-form" onsubmit="submitCS(event)">
+        <div style="display:flex;gap:10px;flex-wrap:wrap;">
+          <input type="email" id="cs-email" required placeholder="your@email.com"
+            style="flex:1;padding:14px 18px;border-radius:var(--radius-pill);background:rgba(255,255,255,0.07);border:1px solid rgba(200,151,58,0.3);color:#fff;font-size:0.9rem;font-family:'Inter',sans-serif;outline:none;transition:border-color 0.3s;min-width:200px;"
+            onfocus="this.style.borderColor='rgba(200,151,58,0.7)'"
+            onblur="this.style.borderColor='rgba(200,151,58,0.3)'"
+            aria-label="Email for launch notification">
+          <button type="submit" class="btn btn-gold btn-shine" style="border-radius:var(--radius-pill);white-space:nowrap;" id="cs-notify-btn">
+            <i class="fas fa-bell"></i> Notify Me
+          </button>
+        </div>
+      </form>
+      <p id="cs-success" style="display:none;color:var(--secondary);font-weight:600;margin-top:14px;font-size:0.9rem;">
+        <i class="fas fa-check-circle" style="color:var(--success);"></i> You're on the list! We'll notify you at launch.
+      </p>
+      <p style="font-size:0.75rem;color:rgba(255,255,255,0.28);margin-top:10px;">No spam. One email when we go live.</p>
+    </div>
+
+    <!-- Social links -->
+    <div style="display:flex;justify-content:center;gap:12px;margin-bottom:36px;">
+      <a href="#" style="width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;border:1px solid rgba(255,255,255,0.12);color:rgba(255,255,255,0.45);font-size:0.9rem;transition:all 0.3s;" aria-label="LinkedIn" onmouseover="this.style.background='#0A66C2';this.style.borderColor='#0A66C2';this.style.color='#fff'" onmouseout="this.style.background='transparent';this.style.borderColor='rgba(255,255,255,0.12)';this.style.color='rgba(255,255,255,0.45)'"><i class="fab fa-linkedin-in"></i></a>
+      <a href="#" style="width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;border:1px solid rgba(255,255,255,0.12);color:rgba(255,255,255,0.45);font-size:0.9rem;transition:all 0.3s;" aria-label="Facebook" onmouseover="this.style.background='#1877F2';this.style.borderColor='#1877F2';this.style.color='#fff'" onmouseout="this.style.background='transparent';this.style.borderColor='rgba(255,255,255,0.12)';this.style.color='rgba(255,255,255,0.45)'"><i class="fab fa-facebook-f"></i></a>
+      <a href="#" style="width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;border:1px solid rgba(255,255,255,0.12);color:rgba(255,255,255,0.45);font-size:0.9rem;transition:all 0.3s;" aria-label="Instagram" onmouseover="this.style.background='#E1306C';this.style.borderColor='#E1306C';this.style.color='#fff'" onmouseout="this.style.background='transparent';this.style.borderColor='rgba(255,255,255,0.12)';this.style.color='rgba(255,255,255,0.45)'"><i class="fab fa-instagram"></i></a>
+      <a href="#" style="width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;border:1px solid rgba(255,255,255,0.12);color:rgba(255,255,255,0.45);font-size:0.9rem;transition:all 0.3s;" aria-label="Twitter" onmouseover="this.style.background='#1DA1F2';this.style.borderColor='#1DA1F2';this.style.color='#fff'" onmouseout="this.style.background='transparent';this.style.borderColor='rgba(255,255,255,0.12)';this.style.color='rgba(255,255,255,0.45)'"><i class="fab fa-twitter"></i></a>
+    </div>
+
+    <a href="index.html" style="font-size:0.78rem;color:rgba(255,255,255,0.3);text-transform:uppercase;letter-spacing:0.15em;font-weight:600;transition:color 0.3s;text-decoration:none;" onmouseover="this.style.color='var(--secondary)'" onmouseout="this.style.color='rgba(255,255,255,0.3)'" id="cs-back-link">
+      ← Return to Main Site
+    </a>
+  </div>
+</div>
+
+<script>
+function submitCS(e) {
+  e.preventDefault();
+  document.getElementById('cs-form').style.display = 'none';
+  document.getElementById('cs-success').style.display = 'block';
+}
+</script>
+<script src="script.js"></script>
+</body>
+</html>
