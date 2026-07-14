@@ -18,16 +18,17 @@
     .cd-num {
       width:90px;height:90px;border-radius:16px;
       display:flex;align-items:center;justify-content:center;
-      font-family:'Barlow Condensed',sans-serif;font-size:2.2rem;font-weight:800;color:#fff;
-      background:rgba(26,43,74,0.4);border:1px solid rgba(200,151,58,0.3);
+      font-family:'Barlow Condensed',sans-serif;font-size:2.2rem;font-weight:800;color:var(--text-heading);
+      background:var(--bg-auth-card);border:1px solid var(--border-auth-card);
       position:relative;overflow:hidden;
     }
     .cd-num::before {
       content:'';position:absolute;top:0;left:0;right:0;height:1px;
       background:linear-gradient(90deg,transparent,rgba(200,151,58,0.7),transparent);
     }
-    .cd-label { font-size:0.7rem;color:rgba(255,255,255,0.45);text-transform:uppercase;letter-spacing:0.12em;margin-top:9px;font-weight:600; }
-    .cd-sep { font-size:2rem;color:rgba(200,151,58,0.5);font-weight:300;align-self:center;margin-bottom:22px; }
+    .cd-label { font-size:0.7rem;color:var(--text-auth-muted);text-transform:uppercase;letter-spacing:0.12em;margin-top:9px;font-weight:600; }
+    .cd-sep { font-size:2rem;color:rgba(200,151,58,0.7);font-weight:300;align-self:center;margin-bottom:22px; }
+    #cs-form input::placeholder { color: var(--text-muted); }
 
     @media (max-width:480px) {
       .cd-box { width:64px; }
@@ -37,10 +38,10 @@
 </head>
 <body>
 
-<div style="min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;position:relative;overflow:hidden;background:linear-gradient(145deg,#06090F 0%,#0D1B32 40%,#111E36 75%,#06090F 100%);padding:40px 16px;">
+<div style="min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;position:relative;overflow:hidden;background:var(--bg-auth);padding:40px 16px;transition:background 0.35s ease;">
 
   <!-- Top controls -->
-  <div style="position:fixed;top:20px;right:20px;display:flex;gap:8px;z-index:100;">
+  <div class="auth-top-icons">
     <button class="icon-btn dark-toggle" title="Toggle Dark Mode" aria-label="Toggle dark mode"><i class="fas fa-moon"></i></button>
     <button class="icon-btn rtl-toggle" title="Toggle RTL" aria-label="Toggle RTL"><i class="fas fa-exchange-alt"></i></button>
   </div>
@@ -61,14 +62,20 @@
   <div style="position:relative;z-index:1;text-align:center;max-width:700px;width:100%;" id="cs-content">
 
     <!-- Logo -->
-    <div style="margin-bottom:44px;">
+    <div style="margin-top:40px;margin-bottom:44px;">
       <a href="index.html" style="display:inline-flex;align-items:center;gap:12px;text-decoration:none;" id="cs-logo" aria-label="SecureForce - Return Home">
         <svg width="40" height="40" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <defs><linearGradient id="csGrad" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#C8973A"/><stop offset="100%" stop-color="#DDB358"/></linearGradient></defs>
-          <path d="M50 8 L86 24 L86 52 C86 70 70 84 50 92 C30 84 14 70 14 52 L14 24 Z" fill="url(#csGrad)" fill-opacity="0.15" stroke="url(#csGrad)" stroke-width="3" stroke-linejoin="round"/>
-          <path d="M38 50 L46 58 L64 40" stroke="url(#csGrad)" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+          <defs>
+            <linearGradient id="csSfGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="var(--logo-primary)"/>
+              <stop offset="100%" stop-color="var(--logo-secondary)"/>
+            </linearGradient>
+          </defs>
+          <path d="M50 8 L86 24 L86 52 C86 70 70 84 50 92 C30 84 14 70 14 52 L14 24 Z" fill="url(#csSfGrad)" fill-opacity="0.15" stroke="url(#csSfGrad)" stroke-width="3" stroke-linejoin="round"/>
+          <path d="M50 18 L78 31 L78 52 C78 66 66 78 50 85 C34 78 22 66 22 52 L22 31 Z" fill="url(#csSfGrad)" fill-opacity="0.08"/>
+          <path d="M38 50 L46 58 L64 40" stroke="url(#csSfGrad)" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
         </svg>
-        <span style="font-family:'Barlow Condensed',sans-serif;font-size:1.8rem;font-weight:800;color:#fff;letter-spacing:0.02em;">Secure<span style="color:var(--secondary);">Force</span></span>
+        <span style="font-family:'Barlow Condensed',sans-serif;font-size:1.8rem;font-weight:800;color:var(--text-heading);letter-spacing:0.02em;">Secure<span style="color:var(--secondary);">Force</span></span>
       </a>
     </div>
 
@@ -80,13 +87,13 @@
     </div>
 
     <!-- Headline -->
-    <h1 style="font-family:'Barlow Condensed',sans-serif;font-size:clamp(2.8rem,7vw,5rem);line-height:1.05;margin-bottom:20px;color:#fff;font-weight:900;">
+    <h1 style="font-family:'Barlow Condensed',sans-serif;font-size:clamp(2.8rem,7vw,5rem);line-height:1.05;margin-bottom:20px;color:var(--text-heading);font-weight:900;">
       Your Security<br>
       <span style="background:linear-gradient(135deg,#1A2B4A 0%,#3A5A8A 25%,#C8973A 55%,#DDB358 75%,#1A2B4A 100%);background-size:200% auto;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;animation:shimmerText 5s linear infinite;">Dashboard</span><br>
       Is Coming
     </h1>
 
-    <p style="color:rgba(255,255,255,0.55);font-size:1.05rem;max-width:520px;margin:0 auto 40px;line-height:1.85;">
+    <p style="color:var(--text-body);font-size:1.05rem;max-width:520px;margin:0 auto 40px;line-height:1.85;">
       We're building a state-of-the-art client portal — real-time guard tracking, deployment management, attendance reports, and direct communications with your security team. All in one place.
     </p>
 
@@ -103,17 +110,17 @@
 
     <!-- Features preview -->
     <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:14px;max-width:560px;margin:0 auto 40px;">
-      <div style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:var(--radius-md);padding:18px 14px;text-align:center;">
+      <div style="background:var(--bg-auth-card);border:1px solid var(--border-auth-card);border-radius:var(--radius-md);padding:18px 14px;text-align:center;box-shadow:var(--shadow-sm);">
         <i class="fas fa-map-marker-alt" style="font-size:1.4rem;color:var(--secondary);margin-bottom:8px;display:block;"></i>
-        <div style="font-size:0.78rem;color:rgba(255,255,255,0.6);font-weight:600;">Guard Tracking</div>
+        <div style="font-size:0.78rem;color:var(--text-heading);font-weight:700;">Guard Tracking</div>
       </div>
-      <div style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:var(--radius-md);padding:18px 14px;text-align:center;">
+      <div style="background:var(--bg-auth-card);border:1px solid var(--border-auth-card);border-radius:var(--radius-md);padding:18px 14px;text-align:center;box-shadow:var(--shadow-sm);">
         <i class="fas fa-chart-bar" style="font-size:1.4rem;color:var(--secondary);margin-bottom:8px;display:block;"></i>
-        <div style="font-size:0.78rem;color:rgba(255,255,255,0.6);font-weight:600;">Live Reports</div>
+        <div style="font-size:0.78rem;color:var(--text-heading);font-weight:700;">Live Reports</div>
       </div>
-      <div style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:var(--radius-md);padding:18px 14px;text-align:center;">
+      <div style="background:var(--bg-auth-card);border:1px solid var(--border-auth-card);border-radius:var(--radius-md);padding:18px 14px;text-align:center;box-shadow:var(--shadow-sm);">
         <i class="fas fa-comments" style="font-size:1.4rem;color:var(--secondary);margin-bottom:8px;display:block;"></i>
-        <div style="font-size:0.78rem;color:rgba(255,255,255,0.6);font-weight:600;">Direct Comms</div>
+        <div style="font-size:0.78rem;color:var(--text-heading);font-weight:700;">Direct Comms</div>
       </div>
     </div>
 
@@ -122,9 +129,9 @@
       <form id="cs-form" onsubmit="submitCS(event)">
         <div style="display:flex;gap:10px;flex-wrap:wrap;">
           <input type="email" id="cs-email" required placeholder="your@email.com"
-            style="flex:1;padding:14px 18px;border-radius:var(--radius-pill);background:rgba(255,255,255,0.07);border:1px solid rgba(200,151,58,0.3);color:#fff;font-size:0.9rem;font-family:'Inter',sans-serif;outline:none;transition:border-color 0.3s;min-width:200px;"
-            onfocus="this.style.borderColor='rgba(200,151,58,0.7)'"
-            onblur="this.style.borderColor='rgba(200,151,58,0.3)'"
+            style="flex:1;padding:14px 18px;border-radius:var(--radius-pill);background:var(--bg-card);border:1px solid var(--border);color:var(--text-heading);font-size:0.9rem;font-family:'Inter',sans-serif;outline:none;transition:border-color 0.3s;min-width:200px;"
+            onfocus="this.style.borderColor='var(--secondary)'"
+            onblur="this.style.borderColor='var(--border)'"
             aria-label="Email for launch notification">
           <button type="submit" class="btn btn-gold btn-shine" style="border-radius:var(--radius-pill);white-space:nowrap;" id="cs-notify-btn">
             <i class="fas fa-bell"></i> Notify Me
@@ -134,18 +141,18 @@
       <p id="cs-success" style="display:none;color:var(--secondary);font-weight:600;margin-top:14px;font-size:0.9rem;">
         <i class="fas fa-check-circle" style="color:var(--success);"></i> You're on the list! We'll notify you at launch.
       </p>
-      <p style="font-size:0.75rem;color:rgba(255,255,255,0.28);margin-top:10px;">No spam. One email when we go live.</p>
+      <p style="font-size:0.75rem;color:var(--text-muted);margin-top:10px;">No spam. One email when we go live.</p>
     </div>
 
     <!-- Social links -->
     <div style="display:flex;justify-content:center;gap:12px;margin-bottom:36px;">
-      <a href="#" style="width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;border:1px solid rgba(255,255,255,0.12);color:rgba(255,255,255,0.45);font-size:0.9rem;transition:all 0.3s;" aria-label="LinkedIn" onmouseover="this.style.background='#0A66C2';this.style.borderColor='#0A66C2';this.style.color='#fff'" onmouseout="this.style.background='transparent';this.style.borderColor='rgba(255,255,255,0.12)';this.style.color='rgba(255,255,255,0.45)'"><i class="fab fa-linkedin-in"></i></a>
-      <a href="#" style="width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;border:1px solid rgba(255,255,255,0.12);color:rgba(255,255,255,0.45);font-size:0.9rem;transition:all 0.3s;" aria-label="Facebook" onmouseover="this.style.background='#1877F2';this.style.borderColor='#1877F2';this.style.color='#fff'" onmouseout="this.style.background='transparent';this.style.borderColor='rgba(255,255,255,0.12)';this.style.color='rgba(255,255,255,0.45)'"><i class="fab fa-facebook-f"></i></a>
-      <a href="#" style="width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;border:1px solid rgba(255,255,255,0.12);color:rgba(255,255,255,0.45);font-size:0.9rem;transition:all 0.3s;" aria-label="Instagram" onmouseover="this.style.background='#E1306C';this.style.borderColor='#E1306C';this.style.color='#fff'" onmouseout="this.style.background='transparent';this.style.borderColor='rgba(255,255,255,0.12)';this.style.color='rgba(255,255,255,0.45)'"><i class="fab fa-instagram"></i></a>
-      <a href="#" style="width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;border:1px solid rgba(255,255,255,0.12);color:rgba(255,255,255,0.45);font-size:0.9rem;transition:all 0.3s;" aria-label="Twitter" onmouseover="this.style.background='#1DA1F2';this.style.borderColor='#1DA1F2';this.style.color='#fff'" onmouseout="this.style.background='transparent';this.style.borderColor='rgba(255,255,255,0.12)';this.style.color='rgba(255,255,255,0.45)'"><i class="fab fa-twitter"></i></a>
+      <a href="#" style="width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;border:1px solid var(--border);color:var(--text-muted);font-size:0.9rem;transition:all 0.3s;" aria-label="LinkedIn" onmouseover="this.style.background='#0A66C2';this.style.borderColor='#0A66C2';this.style.color='#fff'" onmouseout="this.style.background='transparent';this.style.borderColor='var(--border)';this.style.color='var(--text-muted)'"><i class="fab fa-linkedin-in"></i></a>
+      <a href="#" style="width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;border:1px solid var(--border);color:var(--text-muted);font-size:0.9rem;transition:all 0.3s;" aria-label="Facebook" onmouseover="this.style.background='#1877F2';this.style.borderColor='#1877F2';this.style.color='#fff'" onmouseout="this.style.background='transparent';this.style.borderColor='var(--border)';this.style.color='var(--text-muted)'"><i class="fab fa-facebook-f"></i></a>
+      <a href="#" style="width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;border:1px solid var(--border);color:var(--text-muted);font-size:0.9rem;transition:all 0.3s;" aria-label="Instagram" onmouseover="this.style.background='#E1306C';this.style.borderColor='#E1306C';this.style.color='#fff'" onmouseout="this.style.background='transparent';this.style.borderColor='var(--border)';this.style.color='var(--text-muted)'"><i class="fab fa-instagram"></i></a>
+      <a href="#" style="width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;border:1px solid var(--border);color:var(--text-muted);font-size:0.9rem;transition:all 0.3s;" aria-label="Twitter" onmouseover="this.style.background='#1DA1F2';this.style.borderColor='#1DA1F2';this.style.color='#fff'" onmouseout="this.style.background='transparent';this.style.borderColor='var(--border)';this.style.color='var(--text-muted)'"><i class="fab fa-twitter"></i></a>
     </div>
 
-    <a href="index.html" style="font-size:0.78rem;color:rgba(255,255,255,0.3);text-transform:uppercase;letter-spacing:0.15em;font-weight:600;transition:color 0.3s;text-decoration:none;" onmouseover="this.style.color='var(--secondary)'" onmouseout="this.style.color='rgba(255,255,255,0.3)'" id="cs-back-link">
+    <a href="index.html" style="font-size:0.78rem;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.15em;font-weight:600;transition:color 0.3s;text-decoration:none;" onmouseover="this.style.color='var(--secondary)'" onmouseout="this.style.color='var(--text-muted)'" id="cs-back-link">
       ← Return to Main Site
     </a>
   </div>

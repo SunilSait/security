@@ -134,8 +134,8 @@
     <div class="grid-3">
       <!-- Residential -->
       <div class="card animate-on-scroll delay-1" id="service-residential">
-        <div style="height:220px;overflow:hidden;position:relative;">
-          <img src="assets/images/residential-guard.png" alt="Residential security guard" style="width:100%;height:100%;object-fit:cover;transition:transform 0.5s ease;">
+        <div class="card-img-wrapper">
+          <img src="assets/images/residential-guard.png" alt="Residential security guard" style="transition:transform 0.5s ease;">
           <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(26,43,74,0.6) 0%,transparent 60%);"></div>
           <div style="position:absolute;bottom:16px;left:16px;">
             <span style="background:var(--secondary);color:#fff;font-size:0.72rem;font-weight:700;padding:4px 12px;border-radius:var(--radius-pill);letter-spacing:0.08em;text-transform:uppercase;">Residential</span>
@@ -144,15 +144,15 @@
         <div class="card-body">
           <div class="card-icon"><i class="fas fa-home"></i></div>
           <h3>Residential Security</h3>
-          <p>Uniformed guards for gated communities, apartment complexes, bungalows, and villas. Visitor log management, round-the-clock patrolling, and emergency response.</p>
+          <p>Uniformed guards for gated communities, apartment complexes, bungalows, and villas. Visitor log management, round-the-clock patrolling, and response.</p>
           <a href="services.html#residential" class="btn btn-secondary btn-sm" style="margin-top:18px;" id="residential-learn-more">Learn More <i class="fas fa-arrow-right"></i></a>
         </div>
       </div>
 
       <!-- Corporate -->
       <div class="card animate-on-scroll delay-2" id="service-corporate">
-        <div style="height:220px;overflow:hidden;position:relative;">
-          <img src="assets/images/corporate-guard.png" alt="Corporate lobby security guard" style="width:100%;height:100%;object-fit:cover;transition:transform 0.5s ease;">
+        <div class="card-img-wrapper">
+          <img src="assets/images/corporate-guard.png" alt="Corporate lobby security guard" class="obj-pos-corporate" style="transition:transform 0.5s ease;">
           <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(26,43,74,0.6) 0%,transparent 60%);"></div>
           <div style="position:absolute;bottom:16px;left:16px;">
             <span style="background:var(--primary);color:#fff;font-size:0.72rem;font-weight:700;padding:4px 12px;border-radius:var(--radius-pill);letter-spacing:0.08em;text-transform:uppercase;">Corporate</span>
@@ -168,8 +168,8 @@
 
       <!-- Events -->
       <div class="card animate-on-scroll delay-3" id="service-events">
-        <div style="height:220px;overflow:hidden;position:relative;">
-          <img src="assets/images/event-security.png" alt="Event security crowd management" style="width:100%;height:100%;object-fit:cover;transition:transform 0.5s ease;">
+        <div class="card-img-wrapper">
+          <img src="assets/images/event-security.png" alt="Event security crowd management" style="transition:transform 0.5s ease;">
           <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(26,43,74,0.6) 0%,transparent 60%);"></div>
           <div style="position:absolute;bottom:16px;left:16px;">
             <span style="background:#7C3AED;color:#fff;font-size:0.72rem;font-weight:700;padding:4px 12px;border-radius:var(--radius-pill);letter-spacing:0.08em;text-transform:uppercase;">Events</span>
@@ -208,7 +208,7 @@
 
         <div style="display:flex;flex-direction:column;gap:18px;">
           <div style="display:flex;gap:16px;align-items:flex-start;" class="animate-on-scroll delay-1">
-            <div style="width:44px;height:44px;border-radius:var(--radius-sm);background:rgba(26,43,74,0.08);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:1.1rem;color:var(--primary);">
+            <div style="width:44px;height:44px;border-radius:var(--radius-sm);background:rgba(200,151,58,0.10);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:1.1rem;color:var(--secondary);">
               <i class="fas fa-graduation-cap"></i>
             </div>
             <div>
@@ -226,7 +226,7 @@
             </div>
           </div>
           <div style="display:flex;gap:16px;align-items:flex-start;" class="animate-on-scroll delay-3">
-            <div style="width:44px;height:44px;border-radius:var(--radius-sm);background:rgba(26,43,74,0.08);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:1.1rem;color:var(--primary);">
+            <div style="width:44px;height:44px;border-radius:var(--radius-sm);background:rgba(200,151,58,0.10);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:1.1rem;color:var(--secondary);">
               <i class="fas fa-headset"></i>
             </div>
             <div>
@@ -300,18 +300,18 @@
     </div>
     <div class="grid-4">
       <div class="card animate-on-scroll delay-1" id="spec-armed">
-        <div style="height:180px;overflow:hidden;">
-          <img src="assets/images/armed-guard.png" alt="Armed security officer" style="width:100%;height:100%;object-fit:cover;">
+        <div class="card-img-wrapper">
+          <img src="assets/images/armed-guard.png" alt="Armed security officer" class="obj-pos-top">
         </div>
         <div class="card-body">
           <div class="card-icon"><i class="fas fa-shield-halved"></i></div>
           <h4 style="margin-bottom:8px;">Armed Security</h4>
-          <p style="font-size:0.85rem;">Licensed armed guards for banks, jewelry stores, cash transit, and high-risk environments.</p>
+          <p style="font-size:0.85rem;">Licensed armed guards for banks, jewelry stores, cash transit, and risk environments.</p>
         </div>
       </div>
       <div class="card animate-on-scroll delay-2" id="spec-vip">
-        <div style="height:180px;overflow:hidden;">
-          <img src="assets/images/vip-escort.png" alt="VIP escort protection" style="width:100%;height:100%;object-fit:cover;">
+        <div class="card-img-wrapper">
+          <img src="assets/images/vip-escort.png" alt="VIP escort protection" class="obj-pos-top">
         </div>
         <div class="card-body">
           <div class="card-icon"><i class="fas fa-user-tie"></i></div>
@@ -320,8 +320,8 @@
         </div>
       </div>
       <div class="card animate-on-scroll delay-3" id="spec-cctv">
-        <div style="height:180px;overflow:hidden;">
-          <img src="assets/images/cctv-monitoring.png" alt="CCTV surveillance monitoring" style="width:100%;height:100%;object-fit:cover;">
+        <div class="card-img-wrapper">
+          <img src="assets/images/cctv-monitoring.png" alt="CCTV surveillance monitoring">
         </div>
         <div class="card-body">
           <div class="card-icon"><i class="fas fa-video"></i></div>
@@ -330,8 +330,8 @@
         </div>
       </div>
       <div class="card animate-on-scroll delay-4" id="spec-training">
-        <div style="height:180px;overflow:hidden;">
-          <img src="assets/images/guard-training.png" alt="Security guard training" style="width:100%;height:100%;object-fit:cover;">
+        <div class="card-img-wrapper">
+          <img src="assets/images/guard-training.png" alt="Security guard training" class="obj-pos-bottom">
         </div>
         <div class="card-body">
           <div class="card-icon"><i class="fas fa-dumbbell"></i></div>
@@ -358,7 +358,9 @@
         <div class="quote-icon">"</div>
         <p class="testimonial-text">"SecureForce has been managing our 1,200-unit residential complex for 4 years. Their guards are highly professional, punctual, and proactive. Incident reports have dropped 80% since we engaged them."</p>
         <div class="testimonial-author">
-          <div class="testimonial-avatar">RK</div>
+          <div class="testimonial-avatar">
+            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&crop=faces&q=80&w=150&h=150" alt="Rajesh Kumar" style="width:100%;height:100%;object-fit:cover;object-position:center;">
+          </div>
           <div>
             <div class="testimonial-name">Rajesh Kumar</div>
             <div class="testimonial-role">President, Greenfield Residents Welfare Association</div>
@@ -370,7 +372,9 @@
         <div class="quote-icon">"</div>
         <p class="testimonial-text">"We deployed SecureForce for our annual tech summit with 15,000 attendees. Their event security team was outstanding — zero incidents, seamless crowd management, and excellent VIP handling."</p>
         <div class="testimonial-author">
-          <div class="testimonial-avatar">PM</div>
+          <div class="testimonial-avatar">
+            <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&crop=faces&q=80&w=150&h=150" alt="Priya Mehta" style="width:100%;height:100%;object-fit:cover;object-position:center;">
+          </div>
           <div>
             <div class="testimonial-name">Priya Mehta</div>
             <div class="testimonial-role">Head of Operations, TechSummit India</div>
@@ -380,9 +384,11 @@
       </div>
       <div class="testimonial-card animate-on-scroll delay-3" id="testimonial-3">
         <div class="quote-icon">"</div>
-        <p class="testimonial-text">"As a corporate park with 80+ tenants, we needed a reliable, scalable security partner. SecureForce delivered within 48 hours of signing. Their control room integration is world-class."</p>
+        <p class="testimonial-text">"As a corporate park with 80+ tenants, we needed a reliable, scalable security partner. SecureForce delivered within 48 hours of signing. Their control room integration is world-level-class."</p>
         <div class="testimonial-author">
-          <div class="testimonial-avatar">AS</div>
+          <div class="testimonial-avatar">
+            <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&crop=faces&q=80&w=150&h=150" alt="Anil Sharma" style="width:100%;height:100%;object-fit:cover;object-position:center;">
+          </div>
           <div>
             <div class="testimonial-name">Anil Sharma</div>
             <div class="testimonial-role">Facility Manager, Technopark IT Hub</div>
