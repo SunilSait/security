@@ -48,10 +48,36 @@
   // ─── Navbar Scroll ─────────────────────────────────────────
   function initNavScroll() {
     const nav = document.getElementById('navbar');
-    if (!nav) return;
+    const authIcons = document.querySelector('.auth-top-icons');
+    if (!nav && !authIcons) return;
+
+    let lastScrollY = window.scrollY;
+    const threshold = 50;
+
     const onScroll = () => {
-      nav.classList.toggle('scrolled', window.scrollY > 20);
+      const currentScrollY = window.scrollY;
+
+      if (nav) {
+        nav.classList.toggle('scrolled', currentScrollY > 20);
+      }
+
+      // Check if mobile menu is open to prevent layout glitches
+      const mobileMenu = document.getElementById('nav-mobile');
+      const isMobileMenuOpen = mobileMenu && mobileMenu.classList.contains('open');
+
+      if (!isMobileMenuOpen && currentScrollY > lastScrollY && currentScrollY > threshold) {
+        // Scrolling down - hide
+        if (nav) nav.classList.add('nav-hidden');
+        if (authIcons) authIcons.classList.add('nav-hidden');
+      } else {
+        // Scrolling up - show
+        if (nav) nav.classList.remove('nav-hidden');
+        if (authIcons) authIcons.classList.remove('nav-hidden');
+      }
+
+      lastScrollY = Math.max(0, currentScrollY);
     };
+
     window.addEventListener('scroll', onScroll, { passive: true });
     onScroll();
   }
