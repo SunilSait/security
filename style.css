@@ -440,6 +440,9 @@ p  { font-size: 1rem; color: var(--text-body); }
   font-size: 0.95rem;
   transition: var(--transition);
 }
+.nav-mobile a.btn-gold {
+  color: #fff !important;
+}
 .nav-mobile a:hover, .nav-mobile a.active {
   background: rgba(26,43,74,0.06);
   color: var(--primary);
