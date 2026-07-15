@@ -71,6 +71,10 @@
   --bg-alt:         #1A2233;
   --bg-dark-section:#0A0F1C;
 
+  --secondary:      #DDB358;
+  --secondary-dark: #C8973A;
+  --secondary-light:#EED285;
+
   --text-heading:   #EDF2FF;
   --text-body:      #A8B4CC;
   --text-muted:     #5A6680;
