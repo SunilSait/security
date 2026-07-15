@@ -1724,7 +1724,7 @@ p  { font-size: 1rem; color: var(--text-body); }
     justify-content: center;
   }
   /* Hero actions */
-  .hero-actions { justify-content: center; }
+  .hero-actions { justify-content: flex-start; }
   /* Center align h2-hero content on mobile */
   .h2-hero-content {
     text-align: center;
