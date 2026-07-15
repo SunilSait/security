@@ -121,137 +121,48 @@
     .proc-card:hover .proc-icon { background: var(--primary); color: #fff; }
     [data-theme="dark"] .proc-card:hover .proc-icon { background: var(--secondary); }
 
-    /* Premium Stats Board */
-    .premium-stats-row {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      background: rgba(255, 255, 255, 0.02);
-      border: 1px solid rgba(255, 255, 255, 0.07);
-      border-radius: var(--radius-xl);
-      backdrop-filter: blur(20px);
-      box-shadow: var(--shadow-xl);
-      overflow: hidden;
-      margin-top: 40px;
-    }
-    
-    .premium-stat-item {
-      padding: 50px 30px;
+    /* Glassmorphism stat cards */
+    .glass-stat {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.12);
+      backdrop-filter: blur(16px);
+      border-radius: var(--radius-lg);
+      padding: 36px 28px;
       text-align: center;
-      position: relative;
       transition: var(--transition);
+    }
+    .glass-stat:hover {
+      background: rgba(200,151,58,0.10);
+      border-color: rgba(200,151,58,0.25);
+      transform: translateY(-5px);
+    }
+    .glass-stat-icon {
+      width: 60px;
+      height: 60px;
+      border-radius: var(--radius-md);
+      background: rgba(200, 151, 58, 0.12);
+      border: 1px solid rgba(200, 151, 58, 0.25);
       display: flex;
-      flex-direction: column;
       align-items: center;
       justify-content: center;
-    }
-    
-    /* Divider lines between items */
-    .premium-stat-item:not(:last-child)::after {
-      content: '';
-      position: absolute;
-      right: 0;
-      top: 20%;
-      height: 60%;
-      width: 1px;
-      background: linear-gradient(to bottom, transparent, rgba(200, 151, 58, 0.25), transparent);
-      transition: var(--transition);
-    }
-    
-    .premium-stat-item .stat-icon-wrap {
-      width: 50px;
-      height: 50px;
-      font-size: 1.8rem;
+      margin: 0 auto 18px auto;
+      font-size: 1.6rem;
       color: var(--secondary-light);
-      margin-bottom: 20px;
-      position: relative;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      box-shadow: 0 4px 15px rgba(200, 151, 58, 0.12);
       transition: var(--transition);
     }
-    
-    /* Radial glow behind the icon */
-    .premium-stat-item .stat-icon-wrap::before {
-      content: '';
-      position: absolute;
-      width: 40px;
-      height: 40px;
-      background: radial-gradient(circle, rgba(221, 179, 88, 0.2) 0%, transparent 70%);
-      border-radius: 50%;
-      z-index: -1;
-      opacity: 0.8;
-      transition: var(--transition);
-    }
-    
-    .premium-stat-num {
-      font-family: var(--font-heading);
-      font-size: 3.6rem;
-      font-weight: 900;
-      line-height: 1;
-      background: linear-gradient(135deg, #FFFFFF 30%, var(--secondary) 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      margin-bottom: 10px;
-      transition: var(--transition);
-      letter-spacing: -0.02em;
-    }
-    
-    .premium-stat-label {
-      font-size: 0.8rem;
-      font-weight: 700;
-      color: rgba(255, 255, 255, 0.6);
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-      transition: var(--transition);
-    }
-    
-    /* Hover Effects */
-    .premium-stat-item:hover {
-      background: rgba(200, 151, 58, 0.05);
-      cursor: pointer;
-    }
-    
-    .premium-stat-item:hover .stat-icon-wrap {
+    .glass-stat:hover .glass-stat-icon {
+      transform: scale(1.1) rotate(5deg);
+      background: var(--secondary);
+      border-color: var(--secondary);
       color: #fff;
-      transform: translateY(-4px) scale(1.1);
+      box-shadow: 0 6px 20px rgba(200, 151, 58, 0.4);
     }
-    
-    .premium-stat-item:hover .stat-icon-wrap::before {
-      background: radial-gradient(circle, rgba(221, 179, 88, 0.45) 0%, transparent 70%);
-      transform: scale(1.3);
+    .glass-stat-num {
+      font-family: var(--font-heading); font-size: 3.2rem; font-weight: 900;
+      color: var(--secondary); line-height: 1; margin-bottom: 8px;
     }
-    
-    .premium-stat-item:hover .premium-stat-num {
-      transform: scale(1.05);
-      background: linear-gradient(135deg, #FFFFFF 10%, var(--secondary-light) 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
-    
-    .premium-stat-item:hover .premium-stat-label {
-      color: #fff;
-    }
-    
-    /* Responsive styling */
-    @media (max-width: 991px) {
-      .premium-stats-row {
-        grid-template-columns: repeat(2, 1fr);
-      }
-      .premium-stat-item:nth-child(2)::after {
-        display: none;
-      }
-      .premium-stat-item {
-        padding: 40px 20px;
-      }
-    }
-    @media (max-width: 576px) {
-      .premium-stats-row {
-        grid-template-columns: 1fr;
-      }
-      .premium-stat-item::after {
-        display: none;
-      }
-    }
+    .glass-stat-label { font-size: 0.82rem; color: rgba(255,255,255,0.6); text-transform: uppercase; letter-spacing: 0.08em; font-weight: 600; }
 
     @media (max-width: 768px) {
       .h2-hero h1 { font-size: clamp(2.2rem, 5vw, 3.5rem); }
@@ -475,26 +386,26 @@
       <div class="section-label"><i class="fas fa-chart-line"></i> Impact Metrics</div>
       <h2 style="color:#fff;">Our Deployments <span style="color:var(--secondary);">By Numbers</span></h2>
     </div>
-    <div class="premium-stats-row animate-on-scroll">
-      <div class="premium-stat-item">
-        <div class="stat-icon-wrap"><i class="fas fa-user-shield"></i></div>
-        <div class="premium-stat-num" data-counter data-target="5200" data-suffix="+">5200+</div>
-        <div class="premium-stat-label">Active Deployments</div>
+    <div class="grid-4">
+      <div class="glass-stat animate-on-scroll delay-1">
+        <div class="glass-stat-icon"><i class="fas fa-user-shield"></i></div>
+        <div class="glass-stat-num" data-counter data-target="5200" data-suffix="+">5200+</div>
+        <div class="glass-stat-label">Active Deployments</div>
       </div>
-      <div class="premium-stat-item">
-        <div class="stat-icon-wrap"><i class="fas fa-handshake"></i></div>
-        <div class="premium-stat-num" data-counter data-target="98" data-suffix="%">98%</div>
-        <div class="premium-stat-label">Client Retention Rate</div>
+      <div class="glass-stat animate-on-scroll delay-2">
+        <div class="glass-stat-icon"><i class="fas fa-handshake"></i></div>
+        <div class="glass-stat-num" data-counter data-target="98" data-suffix="%">98%</div>
+        <div class="glass-stat-label">Client Retention Rate</div>
       </div>
-      <div class="premium-stat-item">
-        <div class="stat-icon-wrap"><i class="fas fa-clock"></i></div>
-        <div class="premium-stat-num" data-counter data-target="2" data-suffix=" Hr">2 Hr</div>
-        <div class="premium-stat-label">Avg. Response Time</div>
+      <div class="glass-stat animate-on-scroll delay-3">
+        <div class="glass-stat-icon"><i class="fas fa-clock"></i></div>
+        <div class="glass-stat-num" data-counter data-target="2" data-suffix=" Hr">2 Hr</div>
+        <div class="glass-stat-label">Avg. Response Time</div>
       </div>
-      <div class="premium-stat-item">
-        <div class="stat-icon-wrap"><i class="fas fa-globe-asia"></i></div>
-        <div class="premium-stat-num" data-counter data-target="24" data-suffix="">24</div>
-        <div class="premium-stat-label">States Operational</div>
+      <div class="glass-stat animate-on-scroll delay-4">
+        <div class="glass-stat-icon"><i class="fas fa-globe-asia"></i></div>
+        <div class="glass-stat-num" data-counter data-target="24" data-suffix="">24</div>
+        <div class="glass-stat-label">States Operational</div>
       </div>
     </div>
   </div>
