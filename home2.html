@@ -136,6 +136,28 @@
       border-color: rgba(200,151,58,0.25);
       transform: translateY(-5px);
     }
+    .glass-stat-icon {
+      width: 60px;
+      height: 60px;
+      border-radius: var(--radius-md);
+      background: rgba(200, 151, 58, 0.12);
+      border: 1px solid rgba(200, 151, 58, 0.25);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 18px auto;
+      font-size: 1.6rem;
+      color: var(--secondary-light);
+      box-shadow: 0 4px 15px rgba(200, 151, 58, 0.12);
+      transition: var(--transition);
+    }
+    .glass-stat:hover .glass-stat-icon {
+      transform: scale(1.1) rotate(5deg);
+      background: var(--secondary);
+      border-color: var(--secondary);
+      color: #fff;
+      box-shadow: 0 6px 20px rgba(200, 151, 58, 0.4);
+    }
     .glass-stat-num {
       font-family: var(--font-heading); font-size: 3.2rem; font-weight: 900;
       color: var(--secondary); line-height: 1; margin-bottom: 8px;
@@ -323,7 +345,7 @@
     <div class="grid-4" style="margin-top:40px;">
       <div class="proc-card animate-on-scroll delay-1" id="proc-1">
         <div class="proc-num">1</div>
-        <div class="proc-icon"><i class="fas fa-phone-alt"></i></div>
+        <div class="proc-icon"><i class="fas fa-phone"></i></div>
         <h4 style="margin-bottom:10px;">Consultation</h4>
         <p style="font-size:0.88rem;">Submit your manpower requirement. Our security consultant contacts you within 2 hours to assess your needs.</p>
       </div>
@@ -366,22 +388,22 @@
     </div>
     <div class="grid-4">
       <div class="glass-stat animate-on-scroll delay-1">
-        <div style="font-size:2rem;color:rgba(200,151,58,0.4);margin-bottom:14px;"><i class="fas fa-user-shield"></i></div>
+        <div class="glass-stat-icon"><i class="fas fa-user-shield"></i></div>
         <div class="glass-stat-num" data-counter data-target="5200" data-suffix="+">5200+</div>
         <div class="glass-stat-label">Active Deployments</div>
       </div>
       <div class="glass-stat animate-on-scroll delay-2">
-        <div style="font-size:2rem;color:rgba(200,151,58,0.4);margin-bottom:14px;"><i class="fas fa-handshake"></i></div>
+        <div class="glass-stat-icon"><i class="fas fa-handshake"></i></div>
         <div class="glass-stat-num" data-counter data-target="98" data-suffix="%">98%</div>
         <div class="glass-stat-label">Client Retention Rate</div>
       </div>
       <div class="glass-stat animate-on-scroll delay-3">
-        <div style="font-size:2rem;color:rgba(200,151,58,0.4);margin-bottom:14px;"><i class="fas fa-clock"></i></div>
+        <div class="glass-stat-icon"><i class="fas fa-clock"></i></div>
         <div class="glass-stat-num" data-counter data-target="2" data-suffix=" Hr">2 Hr</div>
         <div class="glass-stat-label">Avg. Response Time</div>
       </div>
       <div class="glass-stat animate-on-scroll delay-4">
-        <div style="font-size:2rem;color:rgba(200,151,58,0.4);margin-bottom:14px;"><i class="fas fa-globe-asia"></i></div>
+        <div class="glass-stat-icon"><i class="fas fa-globe-asia"></i></div>
         <div class="glass-stat-num" data-counter data-target="24" data-suffix="">24</div>
         <div class="glass-stat-label">States Operational</div>
       </div>
